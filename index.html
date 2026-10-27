@@ -1,194 +1,782 @@
+
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CLEANORA | Sofa Cleaning Services</title>
+<meta name="theme-color" content="#082f25">
+<meta name="description" content="CLEANORA professional sofa, mattress and carpet cleaning services in Taramandal, Gorakhpur. Book your cleaning service on WhatsApp.">
+<title>CLEANORA | Premium Sofa Cleaning</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f2f7f7;color:#19343b}
-header{background:#073b42;color:white;text-align:center;padding:30px 15px}
-header h1{font-size:38px;letter-spacing:2px;margin:0}
-header p{margin-bottom:0}
-main{max-width:700px;margin:auto;padding:15px}
-.card{background:white;border-radius:15px;padding:20px;margin:15px 0;box-shadow:0 4px 15px #0001}
-h2{color:#087e83}
-.price{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee}
-label{display:block;margin-top:12px;font-weight:bold}
-input,select,textarea{width:100%;padding:12px;margin-top:6px;border:1px solid #ccd8dc;border-radius:8px;font-size:16px}
-button{width:100%;padding:14px;margin-top:13px;border:0;border-radius:9px;background:#087e83;color:white;font-size:16px;font-weight:bold}
-.wa{background:#168747}
-.note{font-size:13px;color:#63747a}
+:root {
+  --green: #082f25;
+  --green2: #104b38;
+  --gold: #d8b56a;
+  --gold-light: #f5e5b5;
+  --cream: #faf8f1;
+  --white: #ffffff;
+  --text: #26352e;
+  --muted: #68756e;
+  --line: #e9e4d8;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+button, .btn { cursor: pointer; }
+.wrap { width: min(1100px, 92%); margin: auto; }
+
+.topbar {
+  background: #05241c;
+  color: #f5e5b5;
+  text-align: center;
+  padding: 9px 12px;
+  font-size: 13px;
+  letter-spacing: .4px;
+}
+nav {
+  background: var(--green);
+  color: white;
+  padding: 18px 0;
+  border-bottom: 1px solid #c6a45d55;
+}
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.brand {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.brand span { color: var(--gold); }
+.brand small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #e8dfc7;
+  font-weight: normal;
+}
+.nav-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  font-size: 14px;
+}
+.nav-links a:hover { color: var(--gold); }
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 7px;
+  padding: 13px 20px;
+  font-weight: bold;
+  transition: .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-gold {
+  background: linear-gradient(135deg, #f1d99a, #c6a052);
+  color: #102c20;
+}
+.btn-green { background: var(--green); color: white; }
+.btn-wa { background: #18864a; color: white; }
+.btn-outline {
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  background: transparent;
+}
+.btn-full { width: 100%; margin-top: 12px; }
+
+.hero {
+  background:
+    radial-gradient(ellipse at 85% 20%, #b18a3830, transparent 38%),
+    linear-gradient(125deg, #06251c, #104b38 70%, #163d2c);
+  color: white;
+  padding: 74px 0 68px;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 45px;
+}
+.eyebrow {
+  display: inline-block;
+  color: var(--gold-light);
+  border: 1px solid #d8b56a77;
+  padding: 7px 13px;
+  border-radius: 30px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-size: clamp(38px, 5.5vw, 64px);
+  line-height: 1.08;
+  margin: 22px 0;
+  letter-spacing: -1.5px;
+}
+.hero h1 span { color: var(--gold); }
+.hero p {
+  color: #e0e8e1;
+  max-width: 530px;
+  font-size: 17px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.hero-note {
+  margin-top: 22px;
+  color: #d5ddcf;
+  font-size: 13px;
+}
+.hero-art {
+  min-height: 340px;
+  border: 1px solid #d8b56a70;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #ffffff10, #ffffff03);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-art:before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border: 1px solid #d8b56a55;
+  border-radius: 50%;
+}
+.hero-art:after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border: 1px solid #d8b56a33;
+  border-radius: 50%;
+}
+.hero-symbol { font-size: 86px; z-index: 1; }
+.hero-art h2 {
+  color: var(--gold-light);
+  letter-spacing: 3px;
+  z-index: 1;
+  margin: 8px 0;
+}
+.hero-art p { font-size: 13px; z-index: 1; margin: 0; }
+
+.trustbar {
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 10px;
+  padding: 21px 0;
+}
+.trust-grid strong { color: var(--green); font-size: 14px; }
+.trust-grid span { color: var(--muted); font-size: 12px; }
+
+section.content-section { padding: 62px 0; }
+.section-heading { text-align: center; margin-bottom: 32px; }
+.kicker {
+  color: #9a7733;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+.section-heading h2 {
+  color: var(--green);
+  font-size: clamp(27px, 4vw, 38px);
+  margin: 8px 0;
+}
+.section-heading p { color: var(--muted); margin: 0; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.service-card {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 25px;
+  border-radius: 13px;
+  box-shadow: 0 7px 25px #092d1c08;
+}
+.service-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  background: #f6efd9;
+  color: #8c6925;
+  border-radius: 12px;
+  font-size: 25px;
+}
+.service-card h3 { color: var(--green); margin: 16px 0 7px; }
+.service-card p { color: var(--muted); font-size: 14px; margin: 0; }
+
+.price-section { background: #f0eee5; }
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.price-card {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 23px 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+.price-card.featured {
+  border: 2px solid var(--gold);
+  box-shadow: 0 8px 25px #96742a15;
+}
+.price-card .seats { color: var(--muted); font-size: 13px; }
+.price-card h3 { color: var(--green); margin: 8px 0; }
+.price-card .price {
+  font-size: 26px;
+  font-weight: 900;
+  color: #987127;
+}
+.price-card small { color: var(--muted); font-size: 11px; }
+.price-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 25px;
+  align-items: start;
+}
+.booking-info {
+  background: var(--green);
+  color: white;
+  padding: 30px;
+  border-radius: 14px;
+}
+.booking-info h3 { font-size: 27px; line-height: 1.2; }
+.booking-info p { color: #d7e2da; font-size: 14px; }
+.booking-info li { margin: 12px 0; color: #f3e7c5; }
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 27px;
+  box-shadow: 0 8px 28px #092d1c08;
+}
+.card h2 { color: var(--green); margin: 0 0 20px; font-size: 24px; }
+label {
+  display: block;
+  margin: 14px 0 5px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #344b3d;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d9ded5;
+  border-radius: 7px;
+  background: #fffefa;
+  color: var(--text);
+  outline: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #a9853c;
+  box-shadow: 0 0 0 3px #d8b56a22;
+}
+textarea { min-height: 85px; resize: vertical; }
+.note { color: var(--muted); font-size: 12px; }
+
+.bill-section { background: #f0eee5; }
+#billOutput {
+  margin-top: 18px;
+  padding: 18px;
+  background: #fbfaf5;
+  border: 1px dashed #bda15e;
+  border-radius: 8px;
+}
+#billOutput:empty { display: none; }
+#billOutput pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+.contact-panel {
+  background: var(--green);
+  color: white;
+  padding: 38px 25px;
+  text-align: center;
+  border-radius: 15px;
+}
+.contact-panel h2 { font-size: 30px; margin: 0 0 8px; }
+.contact-panel p { color: #d9e4dc; }
+.contact-panel .phone {
+  color: var(--gold-light);
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+  margin: 15px;
+}
+footer {
+  background: #05241c;
+  color: #e8e0ce;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 12px;
+}
+footer strong { color: var(--gold); }
+
+@media(max-width: 760px) {
+  .nav-links a:not(.btn) { display: none; }
+  .brand { font-size: 23px; }
+  .hero { padding: 48px 0; }
+  .hero-grid, .booking-grid { grid-template-columns: 1fr; }
+  .hero-art { min-height: 240px; }
+  .hero-symbol { font-size: 65px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .price-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid { grid-template-columns: 1fr; gap: 14px; }
+  section.content-section { padding: 44px 0; }
+  .card { padding: 20px; }
+}
+@media print {
+  body * { visibility: hidden !important; }
+  #billOutput, #billOutput * { visibility: visible !important; }
+  #billOutput {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: 1px solid #bbb;
+    padding: 25px;
+    background: white;
+  }
+  #billOutput:before {
+    content: "CLEANORA | PREMIUM CLEANING SERVICES";
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+}
 </style>
 </head>
+
 <body>
-<header>
-<h1>CLEANORA</h1>
-<p>Professional Sofa Cleaning Services</p>
-<p>आपके घर पर भरोसेमंद सोफा सफाई सेवा</p>
+<div class="topbar">PREMIUM SOFA CARE · TARAMANDAL, GORAKHPUR</div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#" class="brand">CLEAN<span>ORA</span>
+      <small>CARE FOR EVERY CORNER</small>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#prices">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#booking">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Premium Home Cleaning</span>
+      <h1>A Fresher Home.<br><span>A Better Feeling.</span></h1>
+      <p>
+        Professional sofa, mattress and carpet cleaning at your doorstep.
+        Give your furniture the care it deserves with CLEANORA.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#booking">Book Your Service →</a>
+        <a class="btn btn-outline"
+           href="https://wa.me/918052745536?text=Hello%20CLEANORA%2C%20I%20want%20to%20book%20a%20cleaning%20service."
+           target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+      <div class="hero-note">Serving Taramandal, Gorakhpur and nearby areas.</div>
+    </div>
+
+    <div class="hero-art" aria-label="CLEANORA premium home care">
+      <div class="hero-symbol">✧</div>
+      <h2>CLEANORA</h2>
+      <p>PREMIUM CARE · PROFESSIONAL SERVICE</p>
+    </div>
+  </div>
 </header>
 
+<div class="trustbar">
+  <div class="wrap trust-grid">
+    <div><strong>✓ Home Service</strong><br><span>Convenient doorstep booking</span></div>
+    <div><strong>✓ Easy Booking</strong><br><span>Book through WhatsApp</span></div>
+    <div><strong>✓ Clear Pricing</strong><br><span>Starting rates shown upfront</span></div>
+  </div>
+</div>
+
 <main>
-<section class="card">
-<h2>हमारी सेवाएँ</h2>
-<p>✓ सोफा डीप क्लीनिंग</p>
-<p>✓ गद्दे की सफाई</p>
-<p>✓ कारपेट की सफाई</p>
-<p>✓ घर पर बुकिंग की सुविधा</p>
-<p><b>सेवा क्षेत्र:</b> Taramandal, Gorakhpur</p>
+<section class="content-section" id="services">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="kicker">What We Do</div>
+      <h2>Care for Your Living Space</h2>
+      <p>Cleaning services designed around your home.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon">⌂</div>
+        <h3>Sofa Deep Cleaning</h3>
+        <p>Refresh your sofa with a focused furniture-cleaning service.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">▤</div>
+        <h3>Mattress Cleaning</h3>
+        <p>Give your mattress a fresh, well-cared-for clean.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">✧</div>
+        <h3>Carpet Cleaning</h3>
+        <p>Careful cleaning for carpets in your home.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section class="card">
-<h2>रेट लिस्ट</h2>
-<div class="price"><span>2 सीटर सोफा</span><b>₹499 से</b></div>
-<div class="price"><span>3 सीटर सोफा</span><b>₹699 से</b></div>
-<div class="price"><span>5 सीटर सोफा</span><b>₹999 से</b></div>
-<div class="price"><span>7 सीटर सोफा</span><b>₹1,299 से</b></div>
-<p class="note">ये शुरुआती प्रस्तावित दरें हैं। अंतिम कीमत काम देखकर तय होगी।</p>
+<section class="content-section price-section" id="prices">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="kicker">Simple Starting Rates</div>
+      <h2>Our Price List</h2>
+      <p>Choose your sofa size to get started.</p>
+    </div>
+
+    <div class="price-grid">
+      <article class="price-card">
+        <div class="seats">COMPACT</div>
+        <h3>2-Seater Sofa</h3>
+        <div class="price">₹499</div>
+        <small>Starting price</small>
+      </article>
+      <article class="price-card featured">
+        <div class="seats">POPULAR</div>
+        <h3>3-Seater Sofa</h3>
+        <div class="price">₹699</div>
+        <small>Starting price</small>
+      </article>
+      <article class="price-card">
+        <div class="seats">FAMILY</div>
+        <h3>5-Seater Sofa</h3>
+        <div class="price">₹999</div>
+        <small>Starting price</small>
+      </article>
+      <article class="price-card">
+        <div class="seats">LARGE</div>
+        <h3>7-Seater Sofa</h3>
+        <div class="price">₹1,299</div>
+        <small>Starting price</small>
+      </article>
+    </div>
+    <p class="price-note">
+      Prices are indicative starting rates. Final charges depend on the
+      furniture condition and cleaning requirements.
+    </p>
+  </div>
 </section>
 
-<section class="card">
-<h2>ऑनलाइन बुकिंग</h2>
-<form id="booking">
-<label>आपका नाम</label>
-<input id="name" required placeholder="पूरा नाम">
-<label>मोबाइल नंबर</label>
-<input id="phone" type="tel" pattern="[0-9]{10}" required placeholder="10 अंकों का नंबर">
-<label>आपका पता</label>
-<input id="address" required placeholder="एरिया और पूरा पता">
-<label>सर्विस चुनें</label>
-<select id="service">
-<option>2 सीटर सोफा - ₹499 से</option>
-<option>3 सीटर सोफा - ₹699 से</option>
-<option>5 सीटर सोफा - ₹999 से</option>
-<option>7 सीटर सोफा - ₹1,299 से</option>
-<option>गद्दा सफाई - कीमत पूछें</option>
-<option>कारपेट सफाई - कीमत पूछें</option>
-</select>
-<label>बुकिंग की तारीख</label>
-<input id="date" type="date" required>
-<label>अतिरिक्त जानकारी</label>
-<textarea id="notes" placeholder="अपनी जरूरत लिखें"></textarea>
-<button type="submit" class="wa">WhatsApp पर बुकिंग करें</button>
-</form>
+<section class="content-section" id="booking">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="kicker">Make an Appointment</div>
+      <h2>Book Your Cleaning</h2>
+      <p>Fill in your details and continue on WhatsApp.</p>
+    </div>
+
+    <div class="booking-grid">
+      <aside class="booking-info">
+        <div class="kicker">CLEANORA Service</div>
+        <h3>Professional care, right at your doorstep.</h3>
+        <p>Tell us what you need. We will receive your booking details on WhatsApp.</p>
+        <ul>
+          <li>Choose your service</li>
+          <li>Share your address and preferred date</li>
+          <li>Confirm the appointment with us</li>
+        </ul>
+        <p><strong>Service Area</strong><br>Taramandal, Gorakhpur</p>
+      </aside>
+
+      <div class="card">
+        <h2>Booking Details</h2>
+        <form id="bookingForm">
+          <label for="name">Full Name *</label>
+          <input id="name" required maxlength="100" placeholder="Enter your full name">
+
+          <label for="phone">Mobile Number *</label>
+          <input id="phone" type="tel" inputmode="numeric"
+                 pattern="[0-9]{10}" maxlength="10" required
+                 placeholder="10-digit mobile number">
+
+          <label for="address">Full Address *</label>
+          <input id="address" required maxlength="300"
+                 placeholder="Area, street and house details">
+
+          <label for="service">Select a Service *</label>
+          <select id="service" required>
+            <option value="2-Seater Sofa - ₹499 onwards">2-Seater Sofa - ₹499 onwards</option>
+            <option value="3-Seater Sofa - ₹699 onwards">3-Seater Sofa - ₹699 onwards</option>
+            <option value="5-Seater Sofa - ₹999 onwards">5-Seater Sofa - ₹999 onwards</option>
+            <option value="7-Seater Sofa - ₹1,299 onwards">7-Seater Sofa - ₹1,299 onwards</option>
+            <option value="Mattress Cleaning - Price on request">Mattress Cleaning - Price on request</option>
+            <option value="Carpet Cleaning - Price on request">Carpet Cleaning - Price on request</option>
+          </select>
+
+          <label for="date">Preferred Date *</label>
+          <input id="date" type="date" required>
+
+          <label for="notes">Additional Details</label>
+          <textarea id="notes" maxlength="500"
+                    placeholder="Tell us about your cleaning requirements"></textarea>
+
+          <button class="btn btn-green btn-full" type="submit">
+            Continue to WhatsApp →
+          </button>
+          <p class="note">Your WhatsApp app will open with your booking details. Please review and press Send.</p>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="card">
-<h2>ग्राहक का बिल बनाएँ</h2>
-<label>ग्राहक का नाम</label>
-<input id="billName" placeholder="ग्राहक का नाम">
-<label>सर्विस</label>
-<input id="billService" placeholder="जैसे 3 सीटर सोफा">
-<label>राशि (₹)</label>
-<input id="amount" type="number" min="0" placeholder="बिल की राशि">
-<button onclick="makeBill()">बिल तैयार करें</button>
-<div id="billOutput"></div>
-<button id="pdfButton" onclick="downloadBill()" hidden>बिल PDF डाउनलोड करें</button>
-<button id="shareButton" class="wa" onclick="shareBill()" hidden>WhatsApp पर बिल भेजें</button>
-<p class="note">बिल तैयार करना और भुगतान प्राप्त करना अलग-अलग काम हैं।</p>
+<section class="content-section bill-section" id="bill">
+  <div class="wrap">
+    <div class="section-heading">
+      <div class="kicker">Business Tools</div>
+      <h2>Customer Invoice</h2>
+      <p>Create a simple invoice for your customer.</p>
+    </div>
+
+    <div class="card" style="max-width:650px;margin:auto">
+      <h2>Prepare a Bill</h2>
+
+      <label for="billName">Customer Name</label>
+      <input id="billName" maxlength="100" placeholder="Customer full name">
+
+      <label for="billService">Service Description</label>
+      <input id="billService" maxlength="200" placeholder="e.g. 3-Seater Sofa Cleaning">
+
+      <label for="amount">Amount (₹)</label>
+      <input id="amount" type="number" min="0" max="1000000"
+             step="0.01" placeholder="Enter bill amount">
+
+      <button class="btn btn-green btn-full" type="button" onclick="makeBill()">
+        Generate Invoice
+      </button>
+
+      <div id="billOutput"></div>
+
+      <button id="pdfButton" class="btn btn-gold btn-full"
+              type="button" onclick="downloadBill()" hidden>
+        Print / Save Invoice as PDF
+      </button>
+
+      <button id="shareButton" class="btn btn-wa btn-full"
+              type="button" onclick="shareBill()" hidden>
+        Share Invoice on WhatsApp
+      </button>
+
+      <p class="note">
+        PDF saving uses your browser's print dialog. Choose “Save as PDF”.
+        Sending a bill does not confirm that payment has been received.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section class="card">
-<h2>हमसे संपर्क करें</h2>
-<p>अपनी सोफा सफाई की बुकिंग के लिए ऊपर दिया गया फॉर्म भरें।</p>
-<p class="note">WhatsApp सुविधा चालू करने के लिए नीचे दिए गए कोड में बिजनेस नंबर भरना जरूरी है।</p>
+<section class="content-section" id="contact">
+  <div class="wrap">
+    <div class="contact-panel">
+      <div class="kicker">Let's Make Your Home Feel Fresh</div>
+      <h2>Ready to Book CLEANORA?</h2>
+      <p>Contact us for sofa, mattress and carpet cleaning.</p>
+      <a class="phone" href="tel:+918052745536">+91 80527 45536</a>
+      <a class="btn btn-gold"
+         href="https://wa.me/918052745536?text=Hello%20CLEANORA%2C%20I%20want%20to%20enquire%20about%20cleaning."
+         target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <p>Service Area: Taramandal, Gorakhpur</p>
+    </div>
+  </div>
 </section>
 </main>
 
-<script>
-// अपना WhatsApp नंबर देश के कोड सहित डालें।
-// उदाहरण: 91XXXXXXXXXX
-const BUSINESS_WHATSAPP = "";
+<footer>
+  <strong>CLEANORA</strong> · CARE FOR EVERY CORNER
+  <p>Professional Sofa Cleaning Services · Taramandal, Gorakhpur</p>
+  <p>© <span id="year"></span> CLEANORA. All rights reserved.</p>
+</footer>
 
+<script>
+const BUSINESS_WHATSAPP = "918052745536";
 let billText = "";
 
-document.getElementById("booking").addEventListener("submit",function(e){
-e.preventDefault();
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("date").min = new Date().toLocaleDateString("en-CA");
 
-const name=document.getElementById("name").value.trim();
-const phone=document.getElementById("phone").value.trim();
-const address=document.getElementById("address").value.trim();
-const service=document.getElementById("service").value;
-const date=document.getElementById("date").value;
-const notes=document.getElementById("notes").value.trim();
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-if(!/^[0-9]{10}$/.test(phone)){
-alert("कृपया सही 10 अंकों का मोबाइल नंबर डालें।");
-return;
-}
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const service = document.getElementById("service").value;
+  const date = document.getElementById("date").value;
+  const notes = document.getElementById("notes").value.trim();
 
-const message=
-`CLEANORA BOOKING
-नाम: ${name}
-मोबाइल: ${phone}
-पता: ${address}
-सर्विस: ${service}
-तारीख: ${date}
-जानकारी: ${notes}`;
+  if (!/^[0-9]{10}$/.test(phone)) {
+    alert("Please enter a valid 10-digit mobile number.");
+    return;
+  }
 
-if(!BUSINESS_WHATSAPP){
-alert("पहले कोड में BUSINESS_WHATSAPP के अंदर अपना बिजनेस नंबर भरें।");
-return;
-}
+  const message =
+`CLEANORA BOOKING REQUEST
 
-window.open(
-"https://wa.me/"+BUSINESS_WHATSAPP+"?text="+encodeURIComponent(message),
-"_blank"
-);
+Name: ${name}
+Customer Mobile: ${phone}
+Address: ${address}
+Service: ${service}
+Preferred Date: ${date}
+Additional Details: ${notes || "None"}
+
+Please confirm availability and final price.`;
+
+  window.open(
+    "https://wa.me/" + BUSINESS_WHATSAPP + "?text=" + encodeURIComponent(message),
+    "_blank",
+    "noopener"
+  );
 });
 
-function makeBill(){
-const name=document.getElementById("billName").value.trim()||"ग्राहक";
-const service=document.getElementById("billService").value.trim()||"सोफा क्लीनिंग";
-const amount=Number(document.getElementById("amount").value);
+function makeBill() {
+  const name = document.getElementById("billName").value.trim() || "Customer";
+  const service = document.getElementById("billService").value.trim() || "Cleaning Service";
+  const amountInput = document.getElementById("amount").value;
+  const amount = Number(amountInput);
 
-if(document.getElementById("amount").value===""||!Number.isFinite(amount)||amount<0){
-alert("कृपया सही बिल राशि भरें।");
-return;
+  if (amountInput === "" || !Number.isFinite(amount) || amount < 0 || amount > 1000000) {
+    alert("Please enter a valid bill amount.");
+    return;
+  }
+
+  billText =
+`CLEANORA
+PREMIUM CLEANING SERVICES
+Taramandal, Gorakhpur
+Contact: +91 80527 45536
+
+CUSTOMER INVOICE
+--------------------------------
+Customer: ${name}
+Service: ${service}
+Invoice Date: ${new Date().toLocaleDateString("en-IN")}
+--------------------------------
+TOTAL AMOUNT: ₹${amount.toFixed(2)}
+--------------------------------
+
+Thank you for choosing CLEANORA!
+
+This invoice records the service amount.
+Payment must be confirmed separately.`;
+
+  const output = document.getElementById("billOutput");
+  output.replaceChildren();
+
+  const pre = document.createElement("pre");
+  pre.textContent = billText;
+  output.appendChild(pre);
+
+  document.getElementById("pdfButton").hidden = false;
+  document.getElementById("shareButton").hidden = false;
 }
 
-billText=`CLEANORA
-Sofa Cleaning Services
+function downloadBill() {
+  if (!billText) {
+    alert("Please generate an invoice first.");
+    return;
+  }
 
-ग्राहक: ${name}
-सर्विस: ${service}
-बिल राशि: ₹${amount.toFixed(2)}
-तारीख: ${new Date().toLocaleDateString("en-IN")}
+  const w = window.open("", "_blank");
+  if (!w) {
+    alert("Please allow pop-ups for this website, then try again.");
+    return;
+  }
 
-धन्यवाद! CLEANORA को चुनने के लिए।
-यह बिल विवरण है; भुगतान की पुष्टि अलग से करें।`;
+  w.document.write(`<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CLEANORA Invoice</title>
+<style>
+body{font-family:Arial,sans-serif;padding:35px;color:#163c2b}
+h1{color:#0b3829;border-bottom:2px solid #c6a052;padding-bottom:12px}
+pre{white-space:pre-wrap;font:15px/1.8 Arial,sans-serif}
+button{padding:12px 18px;background:#0b3829;color:white;border:0;border-radius:6px;cursor:pointer}
+@media print{button{display:none}body{padding:10px}}
+</style>
+</head>
+<body>
+<h1>CLEANORA</h1>
+<p>PREMIUM CLEANING SERVICES</p>
+<pre id="invoice"></pre>
+<button onclick="window.print()">Print / Save as PDF</button>
+</body>
+</html>`);
 
-document.getElementById("billOutput").innerHTML="";
-const pre=document.createElement("pre");
-pre.style.whiteSpace="pre-wrap";
-pre.textContent=billText;
-document.getElementById("billOutput").appendChild(pre);
-document.getElementById("pdfButton").hidden=false;
-document.getElementById("shareButton").hidden=false;
+  w.document.close();
+  w.document.getElementById("invoice").textContent = billText;
 }
 
-function downloadBill(){
-if(!billText){alert("पहले बिल तैयार करें।");return;}
-const w=window.open("","_blank");
-if(!w){
-alert("पॉप-अप ब्लॉक हुआ है। ब्राउज़र में पॉप-अप की अनुमति दें।");
-return;
-}
-w.document.write("<html><head><title>CLEANORA Bill</title></head><body style='font-family:Arial;padding:25px'><pre style='white-space:pre-wrap;font-size:16px'></pre><button onclick='window.print()'>PDF सेव करें / Print</button></body></html>");
-w.document.querySelector("pre").textContent=billText;
-w.document.close();
-}
+function shareBill() {
+  if (!billText) {
+    alert("Please generate an invoice first.");
+    return;
+  }
 
-function shareBill(){
-if(!billText){alert("पहले बिल तैयार करें।");return;}
-if(!BUSINESS_WHATSAPP){
-alert("पहले कोड में BUSINESS_WHATSAPP में अपना नंबर भरें।");
-return;
-}
-window.open(
-"https://wa.me/"+BUSINESS_WHATSAPP+"?text="+encodeURIComponent(billText),
-"_blank"
-);
+  window.open(
+    "https://wa.me/" + BUSINESS_WHATSAPP + "?text=" + encodeURIComponent(billText),
+    "_blank",
+    "noopener"
+  );
 }
 </script>
 </body>
